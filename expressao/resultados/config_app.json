@@ -1,0 +1,9 @@
+{
+ "modelo": "b2",
+ "limiares": {
+  "b0": 0.6,
+  "b2": 0.4
+ },
+ "regra_modelo": "entre os modelos com latência <= 40 ms, o de maior balanced accuracy a 7 classes no AffectNet sem fuga; se outro mais rápido ficar a menos de 1 p.p., o mais rápido",
+ "regra_limiar": "menor limiar com exatidão >= 0.7 no val do AffectNet (7 classes)"
+}

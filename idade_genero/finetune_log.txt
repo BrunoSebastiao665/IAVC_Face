@@ -1,0 +1,85 @@
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/idade_genero/finetune.py", line 27, in <module>
+    import torch
+  File "/Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/faceregognition/lib/python3.9/site-packages/torch/__init__.py", line 1477, in <module>
+    from .functional import *  # noqa: F403
+  File "/Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/faceregognition/lib/python3.9/site-packages/torch/functional.py", line 9, in <module>
+    import torch.nn.functional as F
+  File "/Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/faceregognition/lib/python3.9/site-packages/torch/nn/__init__.py", line 1, in <module>
+    from .modules import *  # noqa: F403
+  File "/Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/faceregognition/lib/python3.9/site-packages/torch/nn/modules/__init__.py", line 35, in <module>
+    from .transformer import TransformerEncoder, TransformerDecoder, \
+  File "/Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/faceregognition/lib/python3.9/site-packages/torch/nn/modules/transformer.py", line 20, in <module>
+    device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/faceregognition/lib/python3.9/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+
+[reg] treino 16384 | val 2341 | antes do fine-tuning: val MAE 9.32, género acc 0.890
+  época  1/12  loss género 0.273  loss idade 0.781  val MAE 6.84  género acc 0.900  (65s)  *
+  época  2/12  loss género 0.208  loss idade 0.684  val MAE 6.80  género acc 0.909  (63s)  *
+  época  3/12  loss género 0.195  loss idade 0.654  val MAE 6.65  género acc 0.915  (58s)  *
+  época  4/12  loss género 0.190  loss idade 0.634  val MAE 6.74  género acc 0.915  (55s)
+  época  5/12  loss género 0.184  loss idade 0.611  val MAE 7.54  género acc 0.916  (54s)
+  época  6/12  loss género 0.179  loss idade 0.598  val MAE 6.22  género acc 0.915  (56s)  *
+  época  7/12  loss género 0.171  loss idade 0.587  val MAE 6.38  género acc 0.921  (56s)
+  época  8/12  loss género 0.164  loss idade 0.569  val MAE 6.24  género acc 0.918  (55s)
+  época  9/12  loss género 0.159  loss idade 0.559  val MAE 6.88  género acc 0.918  (55s)
+  época 10/12  loss género 0.154  loss idade 0.554  val MAE 6.70  género acc 0.921  (55s)
+  época 11/12  loss género 0.150  loss idade 0.550  val MAE 6.27  género acc 0.918  (55s)
+  época 12/12  loss género 0.148  loss idade 0.543  val MAE 6.32  género acc 0.918  (63s)
+[W NNPACK.cpp:64] Could not initialize NNPACK! Reason: Unsupported hardware.
+  melhor val MAE 6.22 -> /Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/models/genderage_ft_reg.onnx
+
+[cls] treino 16384 | val 2341 | antes do fine-tuning: val MAE 16.17, género acc 0.890  (cabeça de idade nova, ainda aleatória)
+  época  1/12  loss género 0.279  loss idade 1.653  val MAE 7.42  género acc 0.904  (63s)  *
+  época  2/12  loss género 0.204  loss idade 1.192  val MAE 8.24  género acc 0.914  (65s)
+  época  3/12  loss género 0.194  loss idade 1.144  val MAE 7.37  género acc 0.905  (64s)  *
+  época  4/12  loss género 0.188  loss idade 1.114  val MAE 7.62  género acc 0.909  (65s)
+  época  5/12  loss género 0.182  loss idade 1.082  val MAE 7.60  género acc 0.916  (65s)
+  época  6/12  loss género 0.174  loss idade 1.066  val MAE 7.05  género acc 0.919  (64s)  *
+  época  7/12  loss género 0.173  loss idade 1.046  val MAE 6.27  género acc 0.917  (64s)  *
+  época  8/12  loss género 0.164  loss idade 1.020  val MAE 6.31  género acc 0.921  (64s)
+  época  9/12  loss género 0.156  loss idade 1.004  val MAE 7.10  género acc 0.923  (64s)
+  época 10/12  loss género 0.152  loss idade 0.992  val MAE 6.85  género acc 0.920  (65s)
+  época 11/12  loss género 0.148  loss idade 0.972  val MAE 6.70  género acc 0.919  (65s)
+  época 12/12  loss género 0.147  loss idade 0.963  val MAE 6.71  género acc 0.918  (65s)
+  melhor val MAE 6.27 -> /Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/models/genderage_ft_cls.onnx
+
+[dldl] treino 16384 | val 2341 | antes do fine-tuning: val MAE 28.64, género acc 0.890  (cabeça de idade nova, ainda aleatória)
+  época  1/12  loss género 0.275  loss idade 3.886  val MAE 9.54  género acc 0.895  (65s)  *
+  época  2/12  loss género 0.210  loss idade 2.060  val MAE 6.27  género acc 0.903  (65s)  *
+  época  3/12  loss género 0.199  loss idade 1.929  val MAE 8.76  género acc 0.901  (65s)
+  época  4/12  loss género 0.192  loss idade 1.881  val MAE 6.55  género acc 0.908  (65s)
+  época  5/12  loss género 0.188  loss idade 1.833  val MAE 6.89  género acc 0.912  (66s)
+  época  6/12  loss género 0.182  loss idade 1.793  val MAE 6.27  género acc 0.919  (66s)  *
+  época  7/12  loss género 0.178  loss idade 1.765  val MAE 7.38  género acc 0.914  (66s)
+  época  8/12  loss género 0.173  loss idade 1.731  val MAE 6.32  género acc 0.915  (65s)
+  época  9/12  loss género 0.168  loss idade 1.712  val MAE 6.56  género acc 0.917  (66s)
+  época 10/12  loss género 0.164  loss idade 1.685  val MAE 6.63  género acc 0.915  (66s)
+  época 11/12  loss género 0.164  loss idade 1.663  val MAE 6.36  género acc 0.917  (66s)
+  época 12/12  loss género 0.158  loss idade 1.653  val MAE 6.58  género acc 0.918  (66s)
+  melhor val MAE 6.27 -> /Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/models/genderage_ft_dldl.onnx
+
+[ordinal] treino 16384 | val 2341 | antes do fine-tuning: val MAE 28.83, género acc 0.890  (cabeça de idade nova, ainda aleatória)
+  época  1/12  loss género 0.271  loss idade 4.123  val MAE 7.38  género acc 0.903  (65s)  *
+  época  2/12  loss género 0.207  loss idade 3.330  val MAE 7.91  género acc 0.898  (66s)
+  época  3/12  loss género 0.193  loss idade 3.146  val MAE 7.26  género acc 0.912  (66s)  *
+  época  4/12  loss género 0.191  loss idade 2.997  val MAE 7.63  género acc 0.914  (66s)
+  época  5/12  loss género 0.181  loss idade 2.882  val MAE 6.96  género acc 0.921  (65s)  *
+  época  6/12  loss género 0.173  loss idade 2.778  val MAE 6.14  género acc 0.916  (66s)  *
+  época  7/12  loss género 0.170  loss idade 2.697  val MAE 7.33  género acc 0.921  (67s)
+  época  8/12  loss género 0.160  loss idade 2.642  val MAE 6.66  género acc 0.919  (66s)
+  época  9/12  loss género 0.158  loss idade 2.595  val MAE 6.32  género acc 0.924  (65s)
+  época 10/12  loss género 0.149  loss idade 2.577  val MAE 6.56  género acc 0.924  (65s)
+  época 11/12  loss género 0.149  loss idade 2.557  val MAE 6.47  género acc 0.921  (66s)
+  época 12/12  loss género 0.151  loss idade 2.552  val MAE 6.65  género acc 0.923  (66s)
+  melhor val MAE 6.14 -> /Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/models/genderage_ft_ordinal.onnx

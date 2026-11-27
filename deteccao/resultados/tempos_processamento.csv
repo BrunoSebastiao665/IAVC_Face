@@ -1,0 +1,21 @@
+modelo,configuracao,imagem,resolucao,gt_caras,caras_detetadas,ms_media,ms_dp,ms_mediana
+RetinaFace R50,scale 0.5, thr 0.9,0--Parade,1024x1024,1,1,470.91,28.29,465.23
+RetinaFace R50,scale 0.5, thr 0.9,1--Handshaking,1024x736,4,3,432.12,113.63,388.41
+RetinaFace R50,scale 0.5, thr 0.9,11--Meeting,1024x732,12,6,374.46,97.45,326.75
+RetinaFace R50,scale 0.5, thr 0.9,12--Group,1024x768,30,7,339.50,17.51,332.07
+RetinaFace R50,scale 0.5, thr 0.9,2--Demonstration,1024x754,81,8,379.16,69.05,354.84
+RetinaFace R50,scale 1.0, thr 0.9,0--Parade,1024x1024,1,1,2150.50,236.41,2077.62
+RetinaFace R50,scale 1.0, thr 0.9,1--Handshaking,1024x736,4,3,1552.42,278.55,1433.38
+RetinaFace R50,scale 1.0, thr 0.9,11--Meeting,1024x732,12,10,1446.37,150.74,1374.22
+RetinaFace R50,scale 1.0, thr 0.9,12--Group,1024x768,30,17,1596.40,276.67,1486.68
+RetinaFace R50,scale 1.0, thr 0.9,2--Demonstration,1024x754,81,28,1486.18,112.24,1448.12
+RetinaFace MobileNet0.25,scale 1.0, thr 0.9,0--Parade,1024x1024,1,0,53.80,5.33,50.92
+RetinaFace MobileNet0.25,scale 1.0, thr 0.9,1--Handshaking,1024x736,4,3,38.00,3.25,36.44
+RetinaFace MobileNet0.25,scale 1.0, thr 0.9,11--Meeting,1024x732,12,8,38.35,3.57,36.51
+RetinaFace MobileNet0.25,scale 1.0, thr 0.9,12--Group,1024x768,30,10,49.21,15.06,38.56
+RetinaFace MobileNet0.25,scale 1.0, thr 0.9,2--Demonstration,1024x754,81,13,64.88,24.35,50.22
+SCRFD-500MF,640x640, thr 0.5,0--Parade,1024x1024,1,0,48.14,16.95,46.70
+SCRFD-500MF,640x640, thr 0.5,1--Handshaking,1024x736,4,3,32.65,16.06,29.15
+SCRFD-500MF,640x640, thr 0.5,11--Meeting,1024x732,12,8,22.67,7.55,17.49
+SCRFD-500MF,640x640, thr 0.5,12--Group,1024x768,30,12,25.48,12.41,16.44
+SCRFD-500MF,640x640, thr 0.5,2--Demonstration,1024x754,81,16,32.00,20.70,21.54

@@ -1,0 +1,10 @@
+# datasets (licenças não permitem redistribuir; ~3,5 GB) e galeria biométrica
+data/
+# ambiente virtual (específico desta máquina)
+faceregognition/
+# Python / sistema
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+.claude/

@@ -1,0 +1,7 @@
+{
+  "modelo": "multitarefa",
+  "limiar_identidade": 0.27000001072883606,
+  "limiar_genero": 0.75,
+  "limiar_expressao": 0.45,
+  "origem_limiar": "provisorio (UTKFace)"
+}

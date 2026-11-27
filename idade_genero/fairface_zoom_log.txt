@@ -1,0 +1,12 @@
+Escolha do zoom do crop alinhado do FairFace (converter_fairface.py, função tune)
+1000 caras do split de VALIDAÇÃO do UTKFace; critério: menor MAE. Corrido em 2 partes
+(0.75-1.05, e depois 1.15-1.35 porque o melhor da 1.ª estava no limite da grelha).
+
+  zoom     MAE  acc género
+  0.75    6.70       0.925
+  0.85    5.83       0.938
+  0.95    5.48       0.947
+  1.05    5.23       0.943
+  1.15    5.16       0.939   <- escolhido
+  1.25    5.25       0.941
+  1.35    5.44       0.940

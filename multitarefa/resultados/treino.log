@@ -1,0 +1,68 @@
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/multitarefa/treinar.py", line 22, in <module>
+    import torch
+  File "/Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/faceregognition/lib/python3.9/site-packages/torch/__init__.py", line 1477, in <module>
+    from .functional import *  # noqa: F403
+  File "/Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/faceregognition/lib/python3.9/site-packages/torch/functional.py", line 9, in <module>
+    import torch.nn.functional as F
+  File "/Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/faceregognition/lib/python3.9/site-packages/torch/nn/__init__.py", line 1, in <module>
+    from .modules import *  # noqa: F403
+  File "/Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/faceregognition/lib/python3.9/site-packages/torch/nn/modules/__init__.py", line 35, in <module>
+    from .transformer import TransformerEncoder, TransformerDecoder, \
+  File "/Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/faceregognition/lib/python3.9/site-packages/torch/nn/modules/transformer.py", line 20, in <module>
+    device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/faceregognition/lib/python3.9/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+ramos ['genero', 'idade', 'expressao'] | UTK treino 16384 val 2341 | AffectNet treino 33785 dev 3748 | 263 passos/época x 6 épocas
+    passo 0/263 (6.1 s/passo)
+    passo 50/263 (5.0 s/passo)
+    passo 100/263 (5.0 s/passo)
+    passo 150/263 (5.1 s/passo)
+    passo 200/263 (5.1 s/passo)
+    passo 250/263 (5.1 s/passo)
+  época 1/6  loss g 0.278 i 4.997 e 1.737 | val género 0.933 MAE 5.18 | dev expr 0.553 (1495s) *genero *idade *expressao
+    passo 0/263 (5.4 s/passo)
+    passo 50/263 (4.9 s/passo)
+    passo 100/263 (4.9 s/passo)
+    passo 150/263 (4.9 s/passo)
+    passo 200/263 (5.0 s/passo)
+    passo 250/263 (5.0 s/passo)
+  época 2/6  loss g 0.161 i 3.747 e 1.402 | val género 0.928 MAE 6.61 | dev expr 0.591 (1465s) *expressao
+    passo 0/263 (5.2 s/passo)
+    passo 50/263 (4.9 s/passo)
+    passo 100/263 (4.9 s/passo)
+    passo 150/263 (4.9 s/passo)
+    passo 200/263 (4.9 s/passo)
+    passo 250/263 (4.9 s/passo)
+  época 3/6  loss g 0.147 i 3.623 e 1.344 | val género 0.944 MAE 4.54 | dev expr 0.609 (1454s) *genero *idade *expressao
+    passo 0/263 (5.3 s/passo)
+    passo 50/263 (4.9 s/passo)
+    passo 100/263 (4.9 s/passo)
+    passo 150/263 (4.9 s/passo)
+    passo 200/263 (4.9 s/passo)
+    passo 250/263 (4.9 s/passo)
+  época 4/6  loss g 0.130 i 3.535 e 1.310 | val género 0.945 MAE 4.48 | dev expr 0.611 (1450s) *genero *idade *expressao
+    passo 0/263 (5.3 s/passo)
+    passo 50/263 (4.9 s/passo)
+    passo 100/263 (4.9 s/passo)
+    passo 150/263 (4.9 s/passo)
+    passo 200/263 (4.9 s/passo)
+    passo 250/263 (4.9 s/passo)
+  época 5/6  loss g 0.120 i 3.479 e 1.283 | val género 0.949 MAE 4.26 | dev expr 0.614 (1450s) *genero *idade *expressao
+    passo 0/263 (5.1 s/passo)
+    passo 50/263 (4.9 s/passo)
+    passo 100/263 (4.9 s/passo)
+    passo 150/263 (4.9 s/passo)
+    passo 200/263 (4.9 s/passo)
+    passo 250/263 (4.9 s/passo)
+  época 6/6  loss g 0.111 i 3.438 e 1.266 | val género 0.944 MAE 4.25 | dev expr 0.614 (1450s) *idade *expressao
+melhor: {'genero': 0.948926439058018, 'idade': 4.25016014309125, 'expressao': 0.6144962455166454} -> /Users/brunosebas/Desktop/Mestrado/2 ano/IAVC/Praticas/P3/models/multitarefa.onnx
